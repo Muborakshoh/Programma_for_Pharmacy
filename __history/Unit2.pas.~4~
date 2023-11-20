@@ -1,0 +1,87 @@
+unit Unit2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ExtCtrls, Vcl.StdCtrls,
+  Data.DB, Vcl.Grids, Vcl.DBGrids, Data.Win.ADODB;
+
+type
+  TForm2 = class(TForm)
+    Panel1: TPanel;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    Button6: TButton;
+    Button7: TButton;
+    DBGrid1: TDBGrid;
+    ADOConnection1: TADOConnection;
+    ADOQuery1: TADOQuery;
+    DataSource1: TDataSource;
+    DataSource2: TDataSource;
+    DBGrid2: TDBGrid;
+    ADOQuery2: TADOQuery;
+    ADOQuery3: TADOQuery;
+    DataSource3: TDataSource;
+    DBGrid3: TDBGrid;
+    procedure FormShow(Sender: TObject);
+    procedure FormResize(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+uses Unit1;
+
+procedure TForm2.Button1Click(Sender: TObject);
+begin
+DBGrid2.Visible:=false;
+DBGrid3.Visible:=false;
+DBGrid1.Visible:=true;
+end;
+
+procedure TForm2.Button2Click(Sender: TObject);
+begin
+DBGrid1.Visible:=false;
+DBGrid3.Visible:=false;
+DBGrid2.Visible:=true;
+end;
+
+procedure TForm2.Button3Click(Sender: TObject);
+begin
+DBGrid2.Visible:=false;
+DBGrid3.Visible:=false;
+DBGrid1.Visible:=true;
+end;
+
+procedure TForm2.FormResize(Sender: TObject);
+begin
+DbGrid1.Height:=Panel2.Height-10;
+DbGrid1.Height:=panel2.Width-10;
+end;
+
+procedure TForm2.FormShow(Sender: TObject);
+begin
+  button7.Visible:=false;
+  DBGrid1.Visible:=false;
+  DBGrid2.Visible:=false;
+  DBGrid3.Visible:=false;
+end;
+
+end.

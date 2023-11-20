@@ -1,0 +1,121 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = #1042#1093#1086#1076
+  ClientHeight = 224
+  ClientWidth = 448
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 19
+  object Label1: TLabel
+    Left = 200
+    Top = 18
+    Width = 46
+    Height = 25
+    Caption = #1042#1093#1086#1076
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Panel1: TPanel
+    Left = 15
+    Top = 49
+    Width = 418
+    Height = 120
+    Color = clGradientInactiveCaption
+    ParentBackground = False
+    TabOrder = 0
+    object Label2: TLabel
+      Left = 24
+      Top = 32
+      Width = 80
+      Height = 19
+      Caption = #1076#1086#1083#1078#1085#1086#1089#1090#1100
+    end
+    object Label3: TLabel
+      Left = 24
+      Top = 72
+      Width = 52
+      Height = 19
+      Caption = #1087#1072#1088#1086#1083#1100
+    end
+    object Edit1: TEdit
+      Left = 144
+      Top = 69
+      Width = 249
+      Height = 27
+      PasswordChar = '*'
+      TabOrder = 0
+    end
+    object DBLookupComboBox1: TDBLookupComboBox
+      Left = 144
+      Top = 24
+      Width = 249
+      Height = 27
+      KeyField = 'EmployeeID'
+      ListField = 'Position'
+      ListSource = DataSource1
+      TabOrder = 1
+    end
+  end
+  object Button1: TButton
+    Left = 240
+    Top = 175
+    Width = 91
+    Height = 36
+    Caption = #1074#1093#1086#1076
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 112
+    Top = 175
+    Width = 91
+    Height = 36
+    Caption = #1074#1099#1093#1086#1076
+    TabOrder = 2
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
+      'fo=False;Initial Catalog=chemist;Data Source=LAPTOP-R11S7NBE'
+    LoginPrompt = False
+    Provider = 'SQLOLEDB.1'
+    Left = 392
+    Top = 16
+  end
+  object ADOTable1: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'Employees'
+    Left = 360
+    Top = 73
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOTable1
+    Left = 312
+    Top = 73
+  end
+  object ADOQuery1: TADOQuery
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from Employees')
+    Left = 328
+    Top = 24
+  end
+end

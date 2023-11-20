@@ -1,0 +1,100 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = #1042#1093#1086#1076
+  ClientHeight = 219
+  ClientWidth = 442
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 19
+  object Label1: TLabel
+    Left = 200
+    Top = 18
+    Width = 46
+    Height = 25
+    Caption = #1042#1093#1086#1076
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Panel1: TPanel
+    Left = 8
+    Top = 49
+    Width = 426
+    Height = 152
+    Caption = 'EmployeeID'
+    TabOrder = 0
+    object Label2: TLabel
+      Left = 24
+      Top = 37
+      Width = 82
+      Height = 19
+      Caption = #1044#1086#1083#1078#1085#1086#1089#1090#1100
+    end
+    object Label3: TLabel
+      Left = 24
+      Top = 83
+      Width = 54
+      Height = 19
+      Caption = #1055#1072#1088#1086#1083#1100
+    end
+    object DBLookupComboBox1: TDBLookupComboBox
+      Left = 136
+      Top = 32
+      Width = 273
+      Height = 27
+      DataSource = DataSource1
+      KeyField = 'EmployeeID'
+      ListField = 'Position'
+      ListSource = DataSource1
+      TabOrder = 0
+    end
+    object Edit1: TEdit
+      Left = 136
+      Top = 80
+      Width = 273
+      Height = 27
+      TabOrder = 1
+      Text = 'Edit1'
+    end
+  end
+  object ADOQuery1: TADOQuery
+    Connection = ADOConnection1
+    Parameters = <>
+    Left = 344
+    Top = 49
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
+      'fo=False;Initial Catalog=chemist;Data Source=LAPTOP-R11S7NBE'
+    LoginPrompt = False
+    Provider = 'SQLOLEDB.1'
+    Left = 312
+    Top = 49
+  end
+  object ADOTable1: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'Employees'
+    Left = 152
+    Top = 81
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOTable1
+    Left = 184
+    Top = 81
+  end
+end
